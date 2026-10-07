@@ -1,0 +1,364 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para Osi 💻</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    background: #080d14;
+    color: #d7ffe9;
+
+    font-family: "Courier New", monospace;
+}
+
+.terminal {
+
+    width: 100%;
+    max-width: 520px;
+
+    background: #111923;
+
+    border: 1px solid #30404f;
+
+    border-radius: 20px;
+
+    padding: 28px;
+
+    box-shadow: 0 15px 45px rgba(0,0,0,.5);
+}
+
+.header {
+
+    color: #91a4b5;
+
+    font-size: 13px;
+
+    margin-bottom: 20px;
+}
+
+.screen {
+
+    min-height: 360px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    gap: 15px;
+}
+
+.lock {
+
+    font-size: 48px;
+}
+
+h1 {
+
+    font-size: 24px;
+
+    color: white;
+
+    line-height: 1.4;
+
+    margin: 0;
+}
+
+.sub {
+
+    color: #9fb2c4;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+.progress {
+
+    width: 85%;
+
+    height: 12px;
+
+    background: #293640;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.bar {
+
+    height: 100%;
+
+    width: 0%;
+
+    background: #b9f6d2;
+
+    transition: width .08s linear;
+}
+
+.message {
+
+    font-size: 23px;
+
+    font-weight: bold;
+
+    color: white;
+
+    line-height: 1.4;
+}
+
+.pro {
+
+    font-size: 21px;
+
+    font-weight: bold;
+}
+
+.delay {
+
+    color: #9fb2c4;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+button {
+
+    border: none;
+
+    border-radius: 999px;
+
+    padding: 14px 24px;
+
+    min-height: 48px;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    background: #d7ffe9;
+
+    color: #101820;
+
+    margin-top: 10px;
+}
+
+button:disabled {
+
+    opacity: .75;
+
+    cursor: default;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="terminal">
+
+
+<div class="header">
+
+OSYSTEM // MENSAJE ESPECIAL v3.0
+
+</div>
+
+
+<div class="screen">
+
+
+<div id="lock" class="lock">
+
+🔐
+
+</div>
+
+
+<h1 id="title">
+
+Mensaje confidencial para Osi
+
+</h1>
+
+
+<div id="sub" class="sub">
+
+Se requiere autorización del informático más PRO.
+
+</div>
+
+
+<div id="progress" class="progress" hidden>
+
+<div id="bar" class="bar"></div>
+
+</div>
+
+
+<div id="message" class="message" hidden>
+
+🇸🇻 ¡FELIZ DÍA DEL INFORMÁTICO SALVADOREÑO! 🇸🇻
+
+</div>
+
+
+<div id="pro" class="pro" hidden>
+
+😎 Siga siendo el más PRO 😘
+
+</div>
+
+
+<div id="delay" class="delay" hidden>
+
+Esta felicitación llega unos días tarde...
+
+<br><br>
+
+Pero no fue olvido. 😌
+
+<br>
+
+Me estaba demorando porque tenía preparada una pequeña sorpresa para usted.
+
+</div>
+
+
+<button id="run">
+
+🔓 DESCIFRAR MENSAJE
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+<script>
+
+
+const boton = document.getElementById("run");
+
+const status = document.getElementById("sub");
+
+const barra = document.getElementById("bar");
+
+const progreso = document.getElementById("progress");
+
+const lock = document.getElementById("lock");
+
+const titulo = document.getElementById("title");
+
+const mensaje = document.getElementById("message");
+
+const pro = document.getElementById("pro");
+
+const delay = document.getElementById("delay");
+
+
+boton.addEventListener("click", function() {
+
+
+    boton.disabled = true;
+
+    boton.hidden = true;
+
+    progreso.hidden = false;
+
+    lock.textContent = "💻";
+
+    titulo.textContent = "Ejecutando sorpresa...";
+
+
+    let porcentaje = 0;
+
+
+    const proceso = setInterval(function() {
+
+
+        porcentaje += 5;
+
+
+        barra.style.width = porcentaje + "%";
+
+
+        status.textContent =
+
+        "Verificando nivel de PRO... "
+
+        + porcentaje + "%";
+
+
+        if (porcentaje >= 100) {
+
+
+            clearInterval(proceso);
+
+
+            lock.textContent = "🇸🇻";
+
+
+            titulo.textContent = "✔ Acceso concedido";
+
+            status.textContent =
+
+            "Sistema ejecutado correctamente.";
+
+
+            mensaje.hidden = false;
+
+            pro.hidden = false;
+
+            delay.hidden = false;
+
+
+        }
+
+
+    }, 80);
+
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
+```
